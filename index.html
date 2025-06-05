@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="description" content="ページ概要" />
+    <meta name="author" content="製作者名" />
+    <meta name="keywords" content="キーワード1, キーワード2, ・・・" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/d0a601627a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <h1>
+      <img
+        src="https://i.ibb.co/Wv8X3LVh/1.png"
+        alt="IMG-5451"
+        width="100px"
+        height="100px"
+      />
+      クールシェアたからづか<br>2025<br />
+      スタンプラリー
+    </h1>
+
+    
+
+<div  class="tabs">
+   <input id="home" type="radio" name="tab_item" aria-label="ホーム"/>
+ <label class="tab_item" for="home">ホーム</label>
+
+ <input id="question" type="radio" name="tab_item" aria-label="質問" />
+ <label class="tab_item" for="question">質問</label>
+
+   <input id="gift" type="radio" name="tab_item" aria-label="地区" checked />
+ <label class="tab_item" for="gift">景品</label>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+<!-- PapaParse を読み込む -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+<script>
+  fetch("https://docs.google.com/spreadsheets/d/167qKSk3a2gE7NSBXg4ezW8DW7U3h4R4wSe-KPudBcpE/gviz/tq?tqx=out:csv")
+    .then((response) => response.text())
+    .then((csvText) => {
+      const parsedData = Papa.parse(csvText, { header: true });
+      const storeData = parsedData.data;
+
+      // A2セルの値（spot2列の1行目の値）を取得
+      const spot = storeData[0]?.spot2 || "不明";
+
+      // HTMLのpClass2の中身を置き換える
+      const spotText = `今年は、宝塚市内の、${spot}箇所にスタンプラリー設置！！<br />たくさんスタンプを集めて特典をゲットしよう！！<br />`;
+      document.querySelector(".pClass2").innerHTML = spotText;
+    });
+</script>
+
+   <div class="tab_content" id="home_content">
+       <div class="tab_content_description">
+           <p class="c-txtsp">  
+
+            <h2>クールシェアスポットとは・・・？</h2>
+            <h3>
+              <p class="pClass1">
+                ご近所の涼しいところへ出かけよう！<br />
+                涼しい場所で、みんなの笑顔もシェアしよう<br />
+                「涼みにきました。」 <br />
+                この一言から始まる居場所とつながり。<br />
+                宝塚のお店や企業、施設に涼みに行ってみませんか？
+              </p>
+              <p class="pClass2">
+                読み込み中
+              </p>
+              <a href="https://coolsharetakarazuka.github.io/map/" class="btn"><i class="fas fa-angle-double-right"></i> 参加スポットは、ここをタップ！！</a>
+              <p class="pClass3">スタンプラリー期間：2025/7/1(火)〜2025/9/30(火)</p>
+              
+            </h3>
+               
+            <h3>
+                <ol>
+                  <li>年齢問わずどなたでも参加可能！</li>
+                  <li>同じスポットは1日1回まで！</li>
+                  <li>毎日通って集めるのはOK！</li>
+                  <li>10スタンプごとに、特典に応募可能！！</li>
+                  <li>さらに、10スタンプごとに限定画像をプレゼント！！</li>
+                </ol>
+                <ul>
+                  <li>
+                    外出の際は熱中症対策のため、<br />必ず飲み物を持って出かけましょう。
+                  </li>
+                  <li>
+                   すずむためのスポットです。<br />ゆずりあう、騒いで迷惑をかけないなど、<br />ルールを守って利用しましょう。
+                  </li>
+                </ul>
+              </h3> 
+            
+    </h3>
+
+            <h2>遊び方</h2>
+            <h3>【簡単】わずか４ステップでスタンプゲット！！</h3>
+            <a href="https://coolsharetakarazuka.github.io/how_to_play/" class="btn"><i class="fas fa-angle-double-right"></i> 詳しい遊び方は、ここをタップ</a>
+            
+              <style>
+                .btn{
+                  display: inline-block;
+                  padding: 0.5em 1em;
+                  text-decoration: none;
+                  background: #668ad8;
+                  color: #fff;
+                  border-bottom: solid 4px #627295;
+                  border-radius: 3px;
+                  font-family: sans-serif;
+                  font-weight: bold;
+                  width: 95%;
+                  text-align: center;
+                  margin: 10px;;
+                }
+
+                .btn:active {
+                /*ボタンを押したとき*/
+                -webkit-transform: translateY(4px);
+                transform: translateY(4px);/*下に動く*/
+                box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+                border-bottom: none;
+                }
+
+             
+              </style>
+
+            <h4>
+              <ul class="explain">
+                <li><a href="https://lin.ee/7ayIPAG" class=""><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="28" class="line_add_friends"></a> <br>LINEの友だち追加をしよう！！</a></li>
+                <li>ユーザー登録をしよう！！</li>
+                <li>スポットのQRコードを<br>読み取ろう！！</li>
+                <li>スタンプ獲得！！</li>
+                
+              </ul>
+              
+              <style>
+                ul.explain{
+                
+                  counter-reset: li;
+                  list-style: none;
+                  padding:0;
+                }
+                  
+              
+
+
+                  ul.explain li{
+                    position: relative;
+                    font-weight: bold;
+                    line-height: 28px;
+                    padding-left: 40px;
+                    margin: 10px 0;
+                    font-size: 15px;
+                  }
+
+                  ul.explain li:nth-child(4n+1){
+                    border: dashed 2px #FFA79F;
+                  }
+
+                  ul.explain li:nth-child(4n+2){
+                    border: dashed 2px #fbaf5d;
+                  }
+
+                  ul.explain li:nth-child(4n+3){
+                    border: dashed 2px #9fCDFF;
+                  }
+
+                  ul.explain li:nth-child(4n+4){
+                    border: dashed 2px #AFEBB6;
+                  }
+
+                  ul.explain li:before{
+                    counter-increment: li;
+                    content: counter(li);
+                    position: absolute;
+                    left: -1px;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 30px;
+                    width: 30px;
+                    height: 30px;
+                    top: 50%;
+                    -moz-transform: translateY(-50%);
+                    -webkit-transform: translateY(-50%);
+                    -o-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                  }
+
+                  ul.explain li:nth-child(4n+1):before{
+                    background: #FFA79F;
+                  }
+                
+                  ul.explain li:nth-child(4n+2):before{
+                    background: #fbaf5d;
+                  }
+                
+                  ul.explain li:nth-child(4n+3):before{
+                    background: #9fCDFF;
+                  }
+                
+                  ul.explain li:nth-child(4n+4):before{
+                    background: #AFEBB6;
+                  }
+                
+              </style>
+      
+
+      <h2>《個人情報の取り扱いについて》</h2>
+        <h5 class="information">LINEユーザーIDは、<br>貯めたスタンプの個数をチェックにのみ使用します。<br>それ以外のことには、使用いたしません</h5>
+        <h5 class="information">アンケートにてご提供いただいたすべての個人情報は、<br>本イベント及び、景品当選時にのみ使用します。<br>第三者に提供されることはありません。</h5></h2>
+      <br>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+            
+           </p>
+       </div>
+   </div>
+
+   <div class="tab_content" id="question_content">
+     <div class="tab_content_description">
+         <p class="c-txtsp">  
+            <h2>よくある質問</h2>
+           <details class="accordion-001">
+            <summary>遊び方がわからない</summary>
+            <p>以下のページもしくは、動画をご視聴ください
+              <h4><i class="fas fa-angle-double-right"></i> 参考ページ：<a href="https://coolsharetakarazuka.github.io/how_to_play/">遊び方ページ</a></h4></p>
+        </details><br>
+    
+        <details class="accordion-001">
+          <summary>LINEの友達追加方法がわからない</summary>
+          <p>《LINE 友達追加》をタップ
+            <h4><i class="fas fa-angle-double-right"></i> <a href="https://lin.ee/7ayIPAG" class=""><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="28" class="line_add_friends"></a></h4>
+               もしくは、LINEのQRコードを読み取ってください<br><br>
+            <h4>【LINE友達追加方法】</h4>
+             <div class="slider-group">
+              <div class="slider-card">①《＋(友達追加)》をタップ
+                <img src="./1-1.png" class="slider-card-img" />
+              </div>
+              <div class="slider-card">②《QRコード》をタップ
+                <img src="./1-2.png" class="slider-card-img" />
+              </div>
+              <div class="slider-card">③LINEのQRコードを読み込む
+                <img src="./1-3.png" class="slider-card-img" />
+              </div>
+              <div class="slider-card">④《友達追加》をタップ
+                <img src="./1-4.png" class="slider-card-img" />
+              </div>
+              <div class="slider-card">⑤《トーク》をタップ
+                <img src="./1-5.png" class="slider-card-img" />
+              </div>
+              <div class="slider-card">🎉友達追加完了！！
+                <img src="./1-6.png" class="slider-card-img" />
+              </div>
+            </div><br>
+          </p>
+      </details><br>
+    
+      <details class="accordion-001">
+        <summary>ユーザー登録の方法がわからない</summary>
+        <p>以下の方法をお試しください
+          <h4><i class="fas fa-angle-double-right"></i>【ユーザー登録方法】</h4>
+        
+          <div class="slider-group">
+            <div class="slider-card">①画像をタップ
+              <img src="./2-1.png" class="slider-card-img" />
+            </div>
+            <div class="slider-card">②《許可する》をタップ
+              <img src="./2-2.png" class="slider-card-img" />
+            </div>
+            <div class="slider-card">③《ユーザー登録をしよう》をタップ
+              <img src="./2-3.png" class="slider-card-img" />
+            </div>
+            <div class="slider-card">④ ①~⑤に答える
+              <img src="./2-4.png" class="slider-card-img" />
+            </div>
+            <div class="slider-card">⑤《ユーザー登録》をタップ
+              <img src="./2-5.png" class="slider-card-img" />
+            </div>
+            <div class="slider-card">🎉ユーザー登録完了！！
+              <img src="./2-6.png" class="slider-card-img" />
+            </div>
+          </div><br>
+        
+        </p>
+    </details><br>
+    
+    <details class="accordion-001">
+      <summary>LINEで【認証】画面が表示された</summary>
+      <p>
+        <h4><i class="fas fa-angle-double-right"></i>《許可する》をタップしてください</h4>
+    
+        <div class="slider-group">
+          <div class="slider-card">
+            <img src="./2-2.png" class="slider-card-img" />
+          </div>
+        </div><br>
+    
+        <h4><i class="fas fa-angle-double-right"></i>個人情報の取り扱いについて</h4>
+    
+        こちらの認証を許可することで、あなたのLINEユーザーIDを取得します。<br>
+        LINEユーザーIDは貯めたスタンプの個数をチェックにのみ使用します。<br>それ以外のことには、使用いたしません。
+      </p>
+    </details><br>
+    
+    <details class="accordion-001">
+      <summary>ユーザー登録画面の質問項目①・⑤について</summary>
+      <p>
+        <h4><i class="fas fa-angle-double-right"></i> ①イベントで使用する参加名</h4>
+        イベントで使用する参加名は、本名でなくて大丈夫です<br>
+        お好きなお名前を入力してください<br>
+    
+        <br><h4><i class="fas fa-angle-double-right"></i> ⑤背景画像</h4>
+        スタンプラリーで使用する背景画像の🔘をタップしてください<br>背景画像はいつでも変更可能です
+        <br><br>
+    
+        【使用例 (スタンプカード)】
+        <div class="slider-group">
+          <div class="slider-card">
+            <img src="./3-6.png" class="slider-card-img" />
+          </div>
+        </div><br>
+    
+      </p>
+    </details><br>
+    
+    <details class="accordion-001">
+      <summary>スタンプの獲得方法がわからない</summary>
+      <p>
+        <h4><i class="fas fa-angle-double-right"></i> 【スタンプ獲得方法】</h4>
+    
+        <div class="slider-group">
+          <div class="slider-card">①初めての方：ユーザー登録完了画面から
+            <img src="./3-1.png" class="slider-card-img" />
+          </div>
+          <div class="slider-card">①2回目以降の方：LINEトーク画面から
+            <img src="./3-2.png" class="slider-card-img" />
+          </div>
+          <div class="slider-card">②《QRコードをスキャン》をタップ
+            <img src="./3-3.png" class="slider-card-img" />
+          </div>
+          <div class="slider-card">③《今回のみ許可する》をタップ
+            <img src="./3-4.png" class="slider-card-img" />
+          </div>
+          <div class="slider-card">④スポットのQRコードをスキャン
+            <img src="./3-5.png" class="slider-card-img" />
+          </div>
+          <div class="slider-card">🎉スタンプ獲得！！
+            <img src="./3-6.png" class="slider-card-img" />
+          </div>
+          <br />
+        </div>
+    
+        
+      </p>
+    </details><br>
+    
+    <details class="accordion-001">
+      <summary>QRコードがどこにあるかわからない</summary>
+      <p>
+        <h4><i class="fas fa-angle-double-right"></i> スポットにある遊び方の用紙の<br>スポットQRコードを読み取ってください<br>※スタンプ獲得可能スポットのみです</h4>
+        <div class="slider-group">
+          <div class="slider-card">
+            <img src="./QRコード.png" class="slider-card-img" /><br>↑ この画像が目印
+          </div>
+        </div><br>
+      </p>
+    </details><br>
+    
+    <details class="accordion-001">
+      <summary>スポット獲得可能スポットはどこ？</summary>
+      <p>
+        以下のページをご覧ください
+        <h4><i class="fas fa-angle-double-right"></i> 参考ページ：<a href="https://coolsharetakarazuka.github.io/map/">マップページ</a></h4>    
+      </p>
+    </details><br>
+    
+    <details class="accordion-001">
+      <summary>現在のスタンプ数を確認しよう</summary>
+      <p>
+        <h4><i class="fas fa-angle-double-right"></i> スタンプカード</h4>
+    
+        <div class="slider-group">
+          <div class="slider-card">①画面下部《マイページ》をタップ<br>《QRコードリーダー》でもOK
+            <img src="./5-1.png" class="slider-card-img" />
+          </div>
+    
+          <div class="slider-card">②画面上部メニュー《スタンプカード》をタップ
+            <img src="./5-2.png" class="slider-card-img" />
+          </div>
+          <div class="slider-card">③《スタンプラリーカード》<br>をタップ
+            <img src="./5-3.png" class="slider-card-img" />
+          </div>
+          
+        </div><br>
+      </p>
+    </details><br>
+    
+    <details class="accordion-001">
+      <summary>スタンプカードの背景画像を変更しよう</summary>
+      <p>
+        <h4><i class="fas fa-angle-double-right"></i> 背景画像を変更</h4>
+        <div class="slider-group">
+          <div class="slider-card">①画面下部《マイページ》をタップ<br>《QRコードリーダー》でもOK
+            <img src="./5-1.png" class="slider-card-img" />
+          </div>
+    
+          <div class="slider-card">②画面上部メニュー《スタンプカード》をタップ
+            <img src="./5-2.png" class="slider-card-img" />
+          </div>
+          <div class="slider-card">③お好きな画像を選択<br>いつでも変更できます！！
+            <img src="./6-2.png" class="slider-card-img" />
+          </div>
+          <div class="slider-card">③《背景画像を変更する》<br>をタップ
+            <img src="./6-3.png" class="slider-card-img" />
+          </div>
+          
+        </div><br>
+    
+        【使用例 (スタンプカード)】
+        <div class="slider-group">
+          <div class="slider-card">
+            <img src="./3-6.png" class="slider-card-img" />
+          </div>
+        </div><br>
+      </p>
+    </details><br>
+    
+    <details class="accordion-001">
+      <summary>マップページの使い方がわからない</summary>
+      <p>※営業日・営業時間が異なる場合があります<br>
+        ※実際に店舗でご確認ください<br>
+        ※位置情報はこのページでのみ使用いたします<br>
+    
+        
+        <h4><i class="fas fa-angle-double-right"></i> 近い順に並び替える</h4>
+        <div class="slider-group">
+          <div class="slider-card">
+            <img src="./4-2.png" class="slider-card-img" />
+          </div>
+        </div><br>
+    
+        <h4><i class="fas fa-angle-double-right"></i> スタンプ獲得スポットを表示</h4>
+        <div class="slider-group">
+          <div class="slider-card">
+            <img src="./4-3.png" class="slider-card-img" />
+          </div>
+        </div><br>
+    
+        <h4><i class="fas fa-angle-double-right"></i> 地区ごとに表示</h4>
+        小学校の校区ごとに表示しています
+        <div class="slider-group">
+          <div class="slider-card">
+            <img src="./4-4.png" class="slider-card-img" />
+          </div>
+        </div><br>
+    
+        <h4><i class="fas fa-angle-double-right"></i> 業種ごとに表示</h4>
+        <div class="slider-group">
+          <div class="slider-card">
+            <img src="./4-5.png" class="slider-card-img" />
+          </div>
+        </div><br>
+    
+        <h4><i class="fas fa-angle-double-right"></i> 営業しているスポットを表示</h4>
+        <div class="slider-group">
+          <div class="slider-card">
+            <img src="./4-6.png" class="slider-card-img" />
+          </div>
+        </div><br>
+    
+      </p>
+    </details><br>
+    
+    <details class="accordion-001">
+      <summary>LINEオープンチャットの使い方がわからない</summary>
+      <p>以下のページをご覧ください
+        <h4><i class="fas fa-angle-double-right"></i> 参考ページ：<a href="https://coolsharetakarazuka.github.io/map/">LINEオープンチャット</a></h4>    
+      </p>
+    </details><br>
+    
+    <details class="accordion-001">
+      <summary></summary>
+      <p>
+        <h4><i class="fas fa-angle-double-right"></i> </h4>
+      </p>
+    </details><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+        <style>
+        .accordion-001 {
+          max-width: 500px;
+          background-color: #f2f2f2;
+          margin:auto;
+          font-size: 120%;
+          font-weight: bold;
+          font-family: sans-serif;
+      }
+      
+      .accordion-001:not([open]) {
+          margin-bottom: 7px;
+      }
+      
+      .accordion-001 summary {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+          padding: 1em 2em;
+          border-radius: 5px;
+          background-color: #72d2f8;
+          color: #fff;
+          font-weight: 600;
+          cursor: pointer;
+      }
+      
+      .accordion-001 summary::-webkit-details-marker {
+          display: none;
+      }
+      
+      .accordion-001 summary::after {
+          transform: translateY(-25%) rotate(45deg);
+          width: 7px;
+          height: 7px;
+          margin-left: 10px;
+          border-bottom: 3px solid #fff;
+          border-right: 3px solid #fff;
+          content: '';
+          transition: transform .3s;
+      }
+      
+      .accordion-001[open] summary::after {
+          transform: rotate(225deg);
+      }
+      
+      .accordion-001 p {
+          transform: translateY(-10px);
+          opacity: 0;
+          margin: 0;
+          padding: 1em 2em 2em 2em;
+          color: #333333;
+          transition: transform .5s, opacity .5s;
+      }
+      
+      .accordion-001[open] p {
+          transform: none;
+          opacity: 1;
+      }
+    
+      h4{
+        margin-top: 0px;
+        margin-left: 30px;
+    
+      }
+    
+      .menu-block i {
+          display: block;
+          position: relative;
+          padding: 10px;
+    
+          margin-top: -5px;
+          font-size: 16px;
+          color: #aaa;
+        }
+    
+      .slider-group {
+          position: relative;
+          width: 100%;
+          min-height: 200px;
+          height: auto;
+          display: flex;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+        }
+    
+        .slider-card {
+          flex: 0 0 auto;
+          max-width: 250px;
+          height: 100%;
+          margin-right: 20px;
+        }
+    
+        .slider-card-img {
+          width: 100%;
+    
+          object-fit: cover;
+        }
+            </style></h2>
+           
+         </p>
+     </div>
+   </div>
+
+   <div class="tab_content" id="gift_content">
+       <div class="tab_content_description">
+           <p class="c-txtsp">
+      
+              <h2>景品について</h2>
+       
+           </p>
+       </div>
+   </div>
+
+   
+
+</div>
+
+<style>
+  
+
+   .tabs {
+       margin-top: 5px;
+       padding-bottom: 5px;
+       background-color: #fff;
+       box-shadow: 0 0 10px rgba(0,0,0,0.5);
+       width: 100%;
+       margin: 0 auto;
+   }
+
+   .tab_item{
+       width: calc(100% / 3);
+       height: 50px;
+       border-bottom: 3px solid  skyblue;
+       background-color: #d9d9d9;
+       line-height: 50px;
+       font-size: 16px;
+       text-align: center;
+       color: #565656;
+       display: block;
+       float: left;
+       font-weight: bold;
+       transition: all 0.2s ease;
+   }
+
+   tab_item:hover {
+       opacity: 0.75;
+   }
+
+   input[name="tab_item"]{
+       display: none;
+   }
+
+   .tab_content {
+       display: none;
+       padding: 5px 20px 0;
+       clear: both;
+       overflow: hidden;
+   }
+
+   #home:checked ~ #home_content,
+   #question:checked ~ #question_content,
+   #gift:checked ~ #gift_content
+ {
+   display: block;
+ }
+
+ .tabs input:checked + .tab_item {
+   background-color: 	skyblue;
+   color: #fff;
+ }
+
+
+</style>
+ 
+<nav>
+    <ul class="menu">
+      <li>
+        <a href="https://coolsharetakarazuka.github.io/home/" target="_self"
+          ><i class="fa-solid fa-house"></i><br /><span class="iconname"
+            >ホーム</span
+          ></a
+        >
+      </li>
+      <li>
+        <a href="https://coolsharetakarazuka.github.io/map/" target="_self"
+          ><i class="fa-solid fa-location-dot"></i><br /><span class="iconname"
+            >マップ</span
+          ></a
+        >
+      </li>
+      <li>
+        <a
+          href="
+        https://coolsharetakarazuka.github.io/how_to_play/" target="_self"
+          ><i class="fa-solid fa-list-ol"></i><br /><span class="iconname"
+            >遊び方</span
+          ></a
+        >
+      </li>
+      <li>
+        <a href="https://liff.line.me/2007302862-3mj9r7W5" target="_self"
+          ><i class="fa-solid fa-stamp"></i><br /><span class="iconname"
+            >スタンプラリー</span
+          ></a
+        >
+      </li>
+    </ul>
+  </nav>
+ 
+      
+<style>
+
+                  @media screen and (max-width: 768px) {
+       * {
+       font-size:95% ; /* スマホではフォントサイズを小さくする */
+       }
+       }
+        
+      .menu {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background: white;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu li {
+        display: inline-block;
+        text-align: center;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .menu a i {
+        font-size: 24px;
+      }
+
+      .menu a span {
+        display: block;
+        font-size: 12px; /* テキストサイズ */
+        margin-top: 5px;
+      }
+
+      @media (max-width: 768px) {
+        .menu {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .menu li {
+          padding: 5px;
+        }
+      }
+          h1 {
+        font-family: sans-serif;
+        display: flex;
+        align-items: center; /* 縦方向の中央揃え */
+        justify-content: center; /* 横方向の中央揃え */
+        text-align: center;
+        background: skyblue;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        font-size: 150%;
+      }
+
+
+      h2 {
+        font-family: sans-serif;
+        text-align: center;
+        border-style: double;
+      }
+
+      .pClass1 {
+        font-family: sans-serif;
+        text-align: center;
+        text-shadow: 2px 2px 5px rgb(70, 199, 250);
+        font-family: sans-serif;
+      }
+
+      .pClass2 {
+        font-family: sans-serif;
+        border-style: dotted;
+        text-align: center;
+      }
+
+      .pClass3 {
+        font-family: sans-serif;
+        text-align: center;
+        background: skyblue;
+      }
+
+      h4{
+        font-family: sans-serif;
+      }
+
+      .information{
+        font-family: sans-serif;
+        border-style: dotted;
+      }
+
+      ol{
+        font-family: sans-serif;
+      }
+
+      .h4{
+        font-size: 30px;
+      }
+    </style>
+  </body>
+</html>
