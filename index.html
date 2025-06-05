@@ -624,13 +624,66 @@
    <div class="tab_content" id="gift_content">
        <div class="tab_content_description">
            <p class="c-txtsp">
-      
+
+        <h2 class="youtube">10月24日(金) 18:00〜<br> <i class="fa-brands fa-youtube youtube"></i> YouTubeLIVEにて当選発表を行います！！</h2>
+        <h3>当選発表まであと<br><span id="day"></span>日 <span id="hour"></span>時間 <span id="min"></span>分 <!--<span id="second"></span>秒--></h3>
+        <a href="" class="youtube"><i class="fa-brands fa-youtube youtube2"></i> YouTube LIVE</a>
+
               <h2>景品について</h2>
-       
+
+              <h2>景品応募・当選の流れ</h2>
+              
+              <h3>景品応募</h3>
+              <ol>
+                <li>８スタンプ獲得ごとに景品に何度も応募可能！！</li>
+                <li>ご応募時に、当選した場合の景品発送に必要なご住所をお伺いします。 </li>
+                    💡ご提供いただいた情報は、景品の発送以外の目的では使用いたしません。
+                
+                <li>応募の際は、同じ景品に何度でも応募できます。</li>
+                💡応募1回ごとに1口として抽選に反映されるため、応募すればするほど当選確率がアップ！
+
+
+              </ol>
+            <h3>景品当選</h3>
+            
+            <h4>10月24日(金) 18:00〜 <i class="fa-brands fa-youtube youtube"></i> Youtube LIVEにて当選発表！！</h4>
+                
+                
+                《当選の場合》
+                <ol>
+                <li>ご登録いただいているLINEに公式アカウントより当選メッセージをお送りします</li>
+                <li>当選メッセージのURLより住所の確認をお願いいたします。</li>
+                💡当選されても住所の確認ができないとお送りできない場合があります。
+                <li>ご登録のご住所に景品をお送りします！</li>
+                </ol>
            </p>
        </div>
    </div>
 
+   <script>
+
+    function showRestTime(){
+
+    const now = new Date();
+    const eventDay = new Date(2025, 9, 24, 18, 0, 0);
+    const diff = eventDay.getTime() - now.getTime();
+
+    const day = Math.floor(diff / 1000 / 60 / 60 / 24);
+    const hour = Math.floor(diff / 1000 / 60 / 60) % 24;
+    const min = Math.floor(diff / 1000 / 60 ) % 60;
+    //const second = Math.floor(diff / 1000 ) % 60; 
+
+    document.getElementById("day").textContent = day;
+    document.getElementById("hour").textContent = hour;
+    document.getElementById("min").textContent = String(min).padStart(2, '0');
+    //document.getElementById("second").textContent = String(second).padStart(2, '0');
+
+    }
+
+    setInterval(showRestTime, 1000);
+
+
+   </script>
    
 
 </div>
@@ -832,6 +885,24 @@
 
       .h4{
         font-size: 30px;
+      }
+      
+      h2.youtube {
+        border-color: #FF0000;
+        border-width: 5px;
+      }
+
+      i.youtube{
+        color: #FF0000;
+      }
+
+      a.youtube{
+        margin : 0 ;
+        text-decoration: none;
+        color: #fff;
+        background-color: #FF0000;
+        padding: 10px;
+        font-size: 200%;
       }
     </style>
   </body>
